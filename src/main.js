@@ -7,10 +7,12 @@ import vuetify from './plugins/vuetify';
 import firebase from 'firebase/app';
 import 'firebase/auth'
 import firebaseConfig from './firebase.config';
+import AlertMessages from './components/AlertMessages';
 
 Vue.config.productionTip = false;
+Vue.component('app-alert-messages', AlertMessages);
+
 firebase.initializeApp(firebaseConfig);
-Vue.config.productionTip = false;
 
 const unsubscribe = firebase.auth()
   .onAuthStateChanged((firebaseUser) => {

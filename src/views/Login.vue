@@ -48,6 +48,7 @@
         </v-layout>
       </v-container>
     </v-content>
+    <app-alert-messages />
   </v-app>
 </template>
 

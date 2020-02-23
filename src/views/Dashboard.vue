@@ -16,7 +16,6 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-
     <v-app-bar
       color="primary"
       app
@@ -24,7 +23,6 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title>{{ $store.state.appTitle }}</v-toolbar-title>
     </v-app-bar>
-
     <v-content>
       <v-container
         class="fill-height"
@@ -45,6 +43,7 @@
     >
     @Copyright FireAuth 2020
     </v-footer>
+    <app-alert-messages />
   </v-app>
 </template>
 

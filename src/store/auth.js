@@ -21,9 +21,10 @@ export default {
         .createUserWithEmailAndPassword(payload.email, payload.password)
         .then(firebaseUser => {
           commit('login', {email: firebaseUser.user.email, uid: firebaseUser.user.uid});
+          this.dispatch('notification/success', `Welcom ${firebaseUser.user.email}`);
           router.push('/');
         }).catch(error => {
-          commit('setError', error.message);
+          this.dispatch('notification/error', 'Invalid credentials');
         }).finally(() => {
           commit('finishLoading');
         });
@@ -35,9 +36,10 @@ export default {
         .signInWithEmailAndPassword(payload.email, payload.password)
         .then(firebaseUser => {
           commit('login', {email: firebaseUser.user.email, uid: firebaseUser.user.uid});
+          this.dispatch('notification/success', `Welcom ${firebaseUser.user.email}`);
           router.push('/');
         }).catch(error => {
-          commit('setError', error.message);
+          this.dispatch('notification/error', 'Invalid email or password');
         }).finally(() => {
           commit('finishLoading');
         });
